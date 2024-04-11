@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>vips</title>
+  <!-- 1. css초기화 -->
+  <link href="./css/reset.css" rel="stylesheet" type="text/css">
+
+  <!-- 2. 공통서식 -->
+  <link rel="stylesheet" href="./css/common.css" type="text/css">
+
+  <!-- 3. 메인서식 -->
+  <link rel="stylesheet" href="./css/main.css" type="text/css">
+
+  <!-- 아이콘폰트 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" type="text/css">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" type="text/css">
+
+
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+
+  <!-- 파비콘 이미지 삽입하기 -->
+
+
+
+  <!-- 사용자가 현재 페이지에 접속을 하면 접속한 디바이스기기를 체크하여 모바일, 태블릿일경우 모바일 페이지로 이동 -->
+  <script>
+    //사용자가 접속한 디바이스 기기 체크하기
+    let mobile_keys=new Array('iPhone','iPad','Android','BlackBerry','Windows Phone','Windows CE','LG','MOT','SAMSUNG','SonyEricsson','Nokia');
+
+    //만약에 웹페이지 주소뒤에 move_pc_screen 값이 없다면
+    if(document.URL.match('move_pc_screen')) mobile_keys=null;
+
+    //위 배열값 개수만큼 반복하여 검사를 하고 모바일 사용자이면 아래 내용을 실행
+    for(i in mobile_keys){
+      //URL파라미터에 'move_pc_screen'가 포함되어 있지 않을때 아래 내용 적용
+      if(navigator.userAgent.match(mobile_keys[i]) !=null){
+        location.href='http://jaerimlim.dothome.co.kr/vips_mobile'; //모바일로 연결하라
+        break; //더이상 실행안함.
+      }
+    }
+  </script>
+
+<body>
+  <!-- 헤더영역 -->
+  <header id="top">
+    <div class="h_top">
+      <h1>
+        <a href="#" title="메인페이지로 바로가기">
+          <img src="./images/h1_vips.png" alt="상단로고이미지">
+        </a>
+      </h1>
+
+      <div class="r_top">
+        <nav class="top_lnb">
+          <ul>
+            <li><a href="#" title="로그인">로그인</a></li>
+            <li><a href="#" title="회원가입">회원가입</a></li>
+            <li><a href="#" title="고객센터">고객센터</a></li>
+          </ul>
+        </nav>
+
+        <fieldset id="search_box">
+          <input type="search" id="search" placeholder="">
+          <label for="search"><i class="fas fa-search"></i></label>
+        </fieldset>
+        </div>
+      </div>
+    
+
+      <div class="h_bottom">
+        <nav class="gnb">
+          <ul>
+            <li><a href="" title="브랜드">brand</a>
+              <ul class="sub">
+                <li><a href="#" title="브랜드스토리">브랜드스토리</a></li>
+                <li><a href="#" title="새소식">새소식</a></li>
+              </ul>
+            </li>
+            <li><a href="" title="메뉴">menu</a>
+              <ul class="sub">
+                <li><a href="#" title="스테이크">스테이크</a></li>
+                <li><a href="#" title="샐러드바">샐러드바</a></li>
+                <li><a href="#" title="음료">음료</a></li>
+                <li><a href="#" title="픽업&딜리버리">픽업&#x0026;딜리버리</a></li>
+                <li><a href="#" title="원산지정보">원산지정보</a></li>
+                <li><a href="#" title="알레르기정보">알레르기정보</a></li>
+              </ul>
+            </li>
+            <li><a href="" title="배네핏">benefit</a>
+              <ul class="sub">
+                <li><a href="#" title="이벤트">이벤트</a></li>
+                <li><a href="#" title="제휴&#x0026;할인카드">제휴&#x0026;할인카드</a></li>
+                <li><a href="#" title="상품권">상품권</a></li>
+                <li><a href="#" title="기프트카드">기프트카드</a></li>
+              </ul>
+            </li>
+            <li><a href="" title="맴버쉽">membership</a>
+              <ul class="sub">
+                <li><a href="#" title="CJ ONE">cj one</a></li>
+                <li><a href="#" title="빕스 매니아">빕스 매니아</a></li>
+              </ul>
+            </li>
+            <li><a href="" title="스토어">store</a>
+              <ul class="sub">
+                <li><a href="#" title="매장안내">매장안내</a></li>
+                <li><a href="#" title="돌잔치">돌잔치</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </div>
+  </header>
+
+  <!-- 메인영역 -->
+  <main>
+    <!-- 메인슬라이드 -->
+    <article class="slide">
+      <h2>메인슬라이드</h2>
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide baneer">
+            <a href="#" title="슬라이드1">
+              <img src="./images/main01.jpg" alt="슬라이드1">
+            </a>
+          </div>
+          <div class="swiper-slide baneer">
+            <a href="#" title="슬라이드2">
+              <img src="./images/main02.jpg" alt="슬라이드2">
+            </a>
+          </div>
+          <div class="swiper-slide baneer">
+            <a href="#" title="슬라이드3">
+              <img src="./images/main03.jpg" alt="슬라이드3">
+            </a>
+          </div>
+        </div>
+        <!-- 페이지번호 -->
+        <div class="swiper-pagination"></div>
+      </div>
+    </article>  
+
+
+    <!-- 2. 스테이크 메뉴 콘텐츠 -->
+    <!-- Swiper -->
+    <div class="steakSlide">
+      <h2>vips premium steak</h2>
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <a href="#" title="스테이크페이지"><img src="./images/steak01.jpg" alt=""></a>
+          <div class="back_s">
+            <a href="#" title="스테이크">채끝 스테이크<br>Sirloin Steak</a>
+          </div>
+          <p>풍부한 육즙으로 소고기 본연의 맛을
+            가장 잘 느낄 수 잇는 스테이크</p>
+        </div>
+        <div class="swiper-slide">
+          <a href="#" title="스테이크페이지"><img src="./images/steak02.jpg" alt=""></a>
+          <div class="back_s">
+            <a href="#" title="스테이크">등심 스테이크<br>Ribeye Steak</a>
+          </div>
+          <p>풍부한 육즙으로 소고기 본연의 맛을
+            가장 잘 느낄 수 잇는 스테이크</p>
+        </div>
+        <div class="swiper-slide">
+          <a href="#" title="스테이크페이지"><img src="./images/steak03.jpg" alt=""></a>
+          <div class="back_s">
+            <a href="#" title="스테이크">허브 갈릭 램 스테이크<br>Herb Garlic Lamp Steak</a>
+          </div>
+          <p>풍부한 육즙으로 소고기 본연의 맛을
+            가장 잘 느낄 수 잇는 스테이크</p>
+        </div>
+        <div class="swiper-slide">
+          <a href="#" title="스테이크페이지"><img src="./images/steak04.jpg" alt=""></a>
+          <div class="back_s">
+            <a href="#" title="스테이크">포터하우스 스테이크<br>Porterhouse Steak</a>
+          </div>
+          <p>풍부한 육즙으로 소고기 본연의 맛을
+            가장 잘 느낄 수 잇는 스테이크</p>
+        </div>
+
+      </div>
+      <div class="swiper-pagination"></div>
+
+    </div>
+  
+
+    <!-- 3. 샐러드바 메뉴 콘텐츠 -->
+    
+  <div class="swiper_salad">
+    <h2>vips saladbar</h2>
+    <div class="saladmenu swiper-wrapper">
+      <div class="salad swiper-slide">
+        <a href="#" title="샐러드바메뉴"><img src="./images/saladbar01.jpg" alt="샐러드바메뉴"></a>
+        <div>
+          <p>blue crap</p>
+        </div>
+      </div>
+      <div class="salad swiper-slide">
+        <a href="#" title="샐러드바메뉴"><img src="./images/saladbar02.jpg" alt="샐러드바메뉴"></a>
+        <div>
+          <p>blue crap</p>
+        </div>
+      </div>
+      <div class="salad swiper-slide">
+        <a href="#" title="샐러드바메뉴"><img src="./images/saladbar03.jpg" alt="샐러드바메뉴"></a>
+        <div>
+          <p>blue crap</p>
+        </div>
+      </div>
+      <div class="salad swiper-slide">
+        <a href="#" title="샐러드바메뉴"><img src="./images/saladbar04.jpg" alt="샐러드바메뉴"></a>
+        <div>
+          <p>blue crap</p>
+        </div>
+      </div>
+      <div class="salad swiper-slide">
+        <a href="#" title="샐러드바메뉴"><img src="./images/saladbar05.jpg" alt="샐러드바메뉴"></a>
+        <div>
+          <p>blue crap</p>
+        </div>
+      </div>
+      <div class="salad swiper-slide">
+        <a href="#" title="샐러드바메뉴"><img src="./images/saladbar06.jpg" alt="샐러드바메뉴"></a>
+        <div>
+          <p>blue crap</p>
+        </div>
+      </div>
+      <div class="salad swiper-slide">
+        <a href="#" title="샐러드바메뉴"><img src="./images/saladbar07.jpg" alt="샐러드바메뉴"></a>
+        <div>
+          <p>blue crap</p>
+        </div>
+      </div>
+      <div class="salad swiper-slide">
+        <a href="#" title="샐러드바메뉴"><img src="./images/saladbar08.jpg" alt="샐러드바메뉴"></a>
+        <div>
+          <p>blue crap</p>
+        </div>
+      </div>
+
+    </div>
+    <div class="saladbar swiper-pagination"></div>
+    
+  </div>
+  <a href="#" title="메뉴 더보기" class="menu_btn">메뉴 더보기</a>
+      
+
+    <!-- 4. 빕스 매니아 -->
+    <article class="vips_mania">
+      <h2>2024 vips mania</h2>
+      <p>더욱 특별하게 돌아온 빕스 매니아 혜택</p>
+      <a href="#">지금 바로 확인하기
+        <i class="fa-solid fa-arrow-right"></i>
+      </a>
+
+      <div class="mania_box">
+        <ul>
+          <li>
+            <div class="mania_top">
+              <a href="#" title="1인 무료 식사권" class="m_txt1">1인 무료 식사권</a>
+            </div>
+            <a href="#" title="샐러드바">샐러드바</a>
+          </li>
+          <li>
+            <div class="mania_top">
+              <a href="#" title="체험단 모집" class="m_txt2">CJ푸드빌 브랜드<br>체험단 모집
+              <p>-대상 브랜 : 빕스, 더플레이스, N서울타워</p>
+              </a>
+            </div>
+            <a href="#" title="매니아 전용 체험단">매니아 전용 체험단</a>
+          </li>
+          <li>
+            <div class="mania_top">
+              <a href="#" title="1인 무료 식사권" class="m_txt3">매니아 등급별<br>생일 쿠폰 증정</a>
+            </div>
+            <a href="#" title="생일축하">생일축하</a>
+          </li>
+        </ul>
+      </div>
+
+
+    </article>
+
+    <!-- 5. 빕스 얌 딜리버리 -->
+    <article>
+      <div class="dely_box">
+        <div>
+          <a href="#" title="픽업&딜리버리 바로가기"><img src="./images/delivery.jpg" alt="픽업&딜리버리"></a>
+        </div>
+        <div class="dely_txt">
+          <h2>vips yum delivery<br>
+          빕스 얌 딜리버리</h2>
+          <p>샐러드부터 스테이크까지 고급스러운 한 끼 식사<br>빕스 픽업&딜리버리를 집에서 특별하게 즐기세요.</p>
+          <a href="#" title="자세히보기">자세히보기</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 6. 스마트스토어 -->
+    <article class="meal_box">
+      <div class="meal_txt">
+        <h2>Meal Replacement<br>
+          빕스 간편식</h2>
+        <p>집에서 즐기던 그 맛 그대로!<br>
+        집에서 즐기는 빕스 다이닝 밀키트로 즐기세요.</p>
+        <a href="#" title="스마트스토어바로가기">스마트스토어바로가기</a>
+      </div>
+      <div>
+        <a href="#" title="스마트스토어바로가기">
+          <img src="./images/smartstore.jpg" alt="스마트스토어">
+        </a>
+      </div>
+    </article>
+
+    <!-- 7. 인스타그램 -->
+    <article class="instagram">
+      <a href="#" title="인스타그램 페이지 이동"><h2><i class="fa-brands fa-instagram"></i>instagram</h2></a>
+      <a href="#" title="인스타그램" class="ins_id">@vips_kr</a>
+      <div class="inst_img">
+        <ul>
+          <li><a href="https://www.instagram.com/p/CzXhkTUSTPF/?igsh=MzRlODBiNWFlZA=="><img src="./images/instagram01.jpg" alt="인스타그램"></a></li>
+          <li><a href="https://www.instagram.com/p/C4rOQ7lSsTO/?igsh=MzRlODBiNWFlZA=="><img src="./images/instagram02.jpg" alt="인스타그램"></a></li>
+          <li><a href="https://www.instagram.com/p/C2s9PduyA90/?igsh=MzRlODBiNWFlZA=="><img src="./images/instagram03.jpg" alt="인스타그램"></a></li>
+          <li><a href="https://www.instagram.com/reel/Cz7kPbbyaH4/?igsh=MzRlODBiNWFlZA=="><img src="./images/instagram04.jpg" alt="인스타그램"></a></li>
+        </ul>
+      </div>
+
+    </article>
+
+    <!-- 탑버튼 -->
+    <div class="top_btn">
+      <a href="#" title="위로가기">
+        <i class="fa-solid fa-arrow-up"></i>
+      </a>
+    </div>
+
+    <!-- 8. 공지사항 -->
+    <div class="new_box">
+      <div class="inner_box">
+        <div class="l_new">
+          <h3><a href="#" title="공지사항 바로가기"><i class="fa-solid fa-microphone"></i>What's New</a></h3>
+          <p><a href="#" title="공지사항">빕스의 다양한 소식을 전달해드립니다.</a></p>
+        </div>
+        <div class="r_new">
+          <ul>
+            <li>
+              <a href="#" title="공지사항 바로가기">CJ푸드빌 개인정보처리방 개정 고지
+              </a>
+            </li>
+            <li>
+              <a href="#" title="공지사항 바로가기">
+              CJ푸드빌 영상정보처리기기 운영/관리방침 개정 고지
+              </a>
+            </li>
+            <li>
+              <a href="#" title="공지사항 바로가기">
+              CJ빕스 매니아 2024 FAQ
+              </a>
+            </li>
+          </ul>
+          <a href="#" title="더보기">MORE</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+
+
+  <!-- 푸터영역 -->
+  <footer>
+
+
+    <nav class="top_f">
+      <ul>
+        <li><a href="#" title="회사소개">회사소개</a></li>
+        <li><a href="#" title="사이트맵">사이트맵</a></li>
+        <li><a href="#" title="이용약관">이용약관</a></li>
+        <li><a href="#" title="개인정보처리방침">개인정보처리방침</a></li>
+        <li><a href="#" title="위치정보 이용약관">위치정보 이용약관</a></li>
+        <li><a href="#" title="공지사항">공지사항</a></li>
+      </ul>
+
+      <select name="siteurl" id="siteUrl" onchange="siteUrl(a);">
+        <option value="">FAMILY SITE</option>
+        <option value="#">SITE01</option>
+        <option value="#">SITE02</option>
+        <option value="#">SITE03</option>
+      </select>
+
+      <ul class="sns">
+        <li>
+          <a href="#" title="인스타그램">
+            <i class="fa-brands fa-instagram">
+            <span>인스타그램</span>
+            </i>
+          </a>
+        </li>
+        <li>
+          <a href="#" title="페이스북">
+            <i class="fa-brands fa-facebook-f">
+              <span>페이스북</span>
+            </i>
+          </a>
+        </li>
+        <li>
+          <a href="#" title="유튜브">
+            <i class="fa-brands fa-youtube">
+            <span>유튜브</span>
+            </i>
+          </a>
+      </ul>
+    </nav>
+
+    <div class="bottom_f">
+      <p>
+        (우)00000 서울시 중구 0000로 000타워 11층 CJ푸드빌(주)<br>
+대표이사 : 000 | 고객센터 : 1577-0000 | 팩스 : 02)0000-0000 | 사업자등록번호 : 000-00-00000 | 개인정보보호책임자 : 000 | 대표E-mail : 00000@cj.net<br>
+Copyright ⓒ 2017 CJ Foodwille ALL RIGHTS RESERVED.
+      </p>
+    </div>
+
+
+
+  </footer>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <script>
+
+    var swiper = new Swiper(".mySwiper", {
+      slidesPerView: 1, //화면에 보여지는 이미지 개수
+      spaceBetween: 0,  //이미지와 이미지 간격
+      loop: true,     //슬라이드 이미지 로테이션 설정 false
+      pagination: {   //콘트롤버튼 옵션
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+      },
+
+    });
+
+    <!-- Initialize Swiper -->
+    var swiper = new Swiper(".steakSlide", {
+        slidesPerView: 2,
+        spaceBetween: 30,
+        freeMode: true,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+      });
+
+    var swiper = new Swiper(".swiper_salad", {
+      slidesPerView: 4,
+      spaceBetween: 30,
+      freeMode: true,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+    });
+
+
+    // 빕스 얌딜리버리&스마트스토어 스크롤시 콘텐츠 텍스트 애니메이션 효과
+    let delyText = document.querySelector(".dely_txt");
+
+    window.addEventListener("scroll", function(){
+      let value = window.scrollY;
+      console.log("scrollY", value);
+      
+      if(value > 2000){
+        delyText.style.animation = "slide1 1s ease-out forwards";
+      }else{
+        delyText.style.animation = "slide2 1s ease-out"
+      }
+    });
+
+    let mealText = document.querySelector(".meal_txt");
+
+    window.addEventListener("scroll", function(){
+      let value = window.scrollY;
+
+      if(value > 2500){
+        mealText.style.animation = "slide1 1s ease-out forwards";
+      }else{
+        mealText.style.animation = "slide2 1s ease-out"
+      }
+    });
+
+    let topbtn = document.querySelector(".top_btn");
+
+    window.addEventListener("scroll", function(){
+    let value = window.scrollY;
+
+      if(value >= 1000){
+        topbtn.style.display = "block";
+      }else{
+        topbtn.style.display= "none"
+      }
+});
+    
+
+  </script>
+</body>
+</html>
