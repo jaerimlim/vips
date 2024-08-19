@@ -16,8 +16,11 @@ h2{
   font-size: 32px;
   color: #84252A;
   font-weight: bold;
-  margin: 50px;
+  margin: 50px 0px;
   text-transform: uppercase;
+}
+article{
+    padding-bottom: 80px;
 }
 main{
   margin: 34px auto 0px auto;
@@ -45,28 +48,25 @@ main{
   border-radius:10px;
 }
 
+
 /* 스테이크 메뉴 서식 */
 
 .steakSlide {
   width: 1200px;
-  height: 650px;
-  margin: 0 auto;
+  margin: 0px auto;
   position: relative;
   overflow: hidden;
   text-align: center;
-  padding-top: 100px;
+  padding-top: 80px;
+  top : 20px
 }
-
 
 .swiper-slide {
   text-align: center;
   font-size: 18px;
   background: #fff;
-  /* display: flex; */
   justify-content: center;
   align-items: center;
-  width: 587px;
-  height: 400px;
 }
 .swiper-slide:hover .back_s{
   display: block;
@@ -77,15 +77,6 @@ main{
   height: 400px;
   object-fit: cover;
 }
-.swiper-slide > p{
-  width: 587px;
-  height: 60px;
-  background: #e9e9e9;
-  color: var(--text_color02);
-  position: relative;
-  line-height: 60px;
-  font-weight: bold;
-}
 .back_s{
   width: 587px;
   height: 400px;
@@ -95,18 +86,67 @@ main{
   display: none;
 
 }
+.back_s > p{
+  width: 587px;
+  height: 60px;
+  color: var(--text_color03);
+  position: relative;
+  top: 150px;
+}
+
 .back_s a{
   color: #fff;
   text-decoration: none;
-  font-size: 32px;
-  line-height: 60px;
+  font-size: 28px;
+  line-height: 50px;
   font-weight: bold;
   position: relative;
   top: 130px;
 }
 
-/* 샐러드바 메뉴 서식 */
 
+
+
+/* 샐러드바 슬라이드 */
+.swiper_salad {
+  width: 1200px;
+  height: 500px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  padding-top: 80px;
+}
+
+
+.swiper_salad > .saladmenu img {
+  display: block;
+  width: 280px;
+  height: 400px;
+}
+
+/* 샐러드바 메뉴 피그캡션 */
+figcaption{
+  width: 280px;
+  height: 0px;
+  background: rgba(121, 8, 8, 0.7);
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 24px;
+  line-height: 60px;
+  text-align: center;
+  position: absolute;
+  bottom:  100px;
+  transition: 0.3s ease-out;
+}
+.swiper-slide:hover  > figcaption{
+  bottom: 100px;
+  height: 60px;
+}
+
+
+
+/* 샐러드바 메뉴 버튼서식 */
 .menu_btn{
   display: block;
   width: 150px;
@@ -114,11 +154,11 @@ main{
   line-height: 30px;
   border: 1px solid var(--text_color02);
   border-radius: 50px;
-  color: var(--text_color02);
+  color: var(--text_coslor02);
   font-weight: bold;
   text-align: center;
   position: relative;
-  margin: 40px auto 100px auto;
+  margin: 30px auto 100px;
 }
 
 .menu_btn:hover{
@@ -126,53 +166,15 @@ main{
   color: var(--text_color03);
 }
 
-/* 샐러드바 슬라이드 */
-.swiper_salad {
-  width: 1200px;
-  height: 600px;
-  margin: 0 auto;
-  position: relative;
-  overflow: hidden;
-  text-align: center;
-}
-
-
-.swiper_salad > .swiper-slide {
-  text-align: center;
-  font-size: 18px;
-  background: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.swiper_salad > .saladmenu img {
-  display: block;
-  width: 280px;
-  height: 400px;
-  object-fit: cover;
-}
-
-.salad >div{
-  width: 280px;
-  height: 60px;
-  background: rgba(58, 58, 58, 0.7);
-  color: #fff;
-  font-size: 20px;
-  line-height: 60px;
-  text-align: center;
-  position: relative;
-  top: -60px;
-}
 
 
 /* 빕스매니아 */
 .vips_mania{
   width: 1200px;
-  height: 600px;
   margin: 0 auto;
   text-align: center;
 }
+.vips_mania p{font-size: 14px; font-weight: bold;}
 /* 혜택 바로가기 버튼 */
 .vips_mania > a{
   border: 1px solid var(--text_color02);
@@ -184,7 +186,7 @@ main{
   height: 30px;
   line-height: 30px;
   font-weight: bold;
-  margin: 10px auto;
+  margin: 20px auto;
 }
 .vips_mania > a:hover{
   background: var(--text_color03);
@@ -192,11 +194,13 @@ main{
 }
 /* 매니아 혜택 박스*/
 .mania_box{width: 1200px;margin-top: 50px;}
+
 .mania_box > ul {display: flex;}
+.mania_box > ul > li{height: 300px;}
 .mania_box > ul > li:nth-child(2){margin: 0px 20px;}
 .mania_top{
   width: 385px;
-  height: 298px;
+  height: 300px;
   border: 1px solid #acacac;
   border-radius: 10px;
   font-size: 28px;
@@ -215,7 +219,7 @@ main{
 .mania_top > .m_txt1{top: 90px;}
 .mania_top > .m_txt2{top: 45px;}
 .mania_top > .m_txt3{top: 60px;}
-.mania_top > a>  p{font-size: 11px;}
+.mania_top > a>  p{font-size: 14px;}
 .mania_box>ul >li >a{
   width: 386px;
   background: var(--text_color02);
@@ -225,26 +229,27 @@ main{
   position: relative;
   top: -80px;
   display: block;
-  font-size: 28px;
+  font-size: 20px;
 }
 .mania_box>ul >li >a:hover{text-decoration: underline;}
+
+
 
 /* 픽업&딜리버리, 빕스간편식 */
 .dely_box, .meal_box{
   width: 1200px;
-  margin: 0 auto;
+  margin: 0px auto;
   display: flex;
-  padding-top: 50px;
 }
+.dely_box{margin-top: 50px;}
 
 .dely_txt, .meal_txt{
-  width: 600px;
+  width: 50%;
   text-align: center;
   position: relative;
-  top: 80px;
   animation: slide1 1s ease-out;
 }
-.dely_txt > h2, .meal_txt > h2{line-height: 50px; margin-bottom: 10px;}
+.dely_txt > h2, .meal_txt > h2{line-height: 50px; margin-bottom: 10px; padding-top: 70px;}
 
 /* 자세히보기,스마트스토어 버튼 */
 .dely_txt > a, .meal_txt > a{
@@ -256,7 +261,7 @@ main{
   border-radius: 50px;
   color: var(--text_color02);
   font-weight: bold;
-  margin: 20px auto;
+  margin: 100px auto;
 }
 .dely_txt > a:hover, .meal_txt > a:hover{
   background: var(--text_color02);
@@ -265,17 +270,17 @@ main{
 /* 얌딜리버리 텍스트 애니메이션 효과 */
 @keyframes slide1{
   from{
-    top: -100px;
+    top: -130px;
     opacity: 0;
   }
   to{
-    top: 80px;
+    top: 0px;
     opacity: 1;
   }
 }
 @keyframes slide2{
   from{
-    top: 80px;
+    top: 0px;
     opacity: 1;
   }
   to{
@@ -311,25 +316,6 @@ main{
 }
 .inst_img > ul>  li img:hover{
   transform: scale(1.1);
-}
-
-/* 탑버튼 */
-.top_btn{
-  width: 60px;
-  height: 60px;
-  background: var(--text_color02);
-  border-radius: 50%;
-  text-align: center;
-  line-height: 60px;
-  position: fixed;
-  right: 100px;
-  bottom: 150px;
-  box-shadow: 0 0 10px #333;
-  z-index: 9999;
-}
-.top_btn a{
-  color: #fff;
-  font-size: 40px;
 }
 
 /* 공지사항 */
